@@ -192,18 +192,3 @@ function changeSlide(category, id, direction) {
     slider.style.transform =
         `translateX(+${slidersIndex[sliderId] * 100}%)`;
 }
-// دالة إظهار وإخفاء التصنيفات
-function toggleCategories() {
-    const area = document.getElementById('categories-area');
-    if (area) {
-        if (area.style.display === 'none' || area.style.display === '') {
-            area.style.display = 'block';
-            // تمرير الشاشة للأسفل قليلاً لتظهر التصنيفات
-            area.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            area.style.display = 'none';
-        }
-    } else {
-        console.error("العنصر categories-area غير موجود!");
-    }
-}
