@@ -374,62 +374,50 @@
         </div>
     </div>
 </div>
-
 <script>
-
 // دالة فتح وإغلاق المحادثة
 function toggleChat() {
     const win = document.getElementById('chatWindow');
     if (win.style.display === 'none' || win.style.display === '') {
         win.style.display = 'flex';
-        loadMessages();
     } else {
         win.style.display = 'none';
     }
 }
 
-// دالة جلب الرسائل من قاعدة البيانات
-function loadMessages() {
-    fetch('chat_handler.php')
-    .then(response => response.text())
-    .then(data => {
-        const container = document.getElementById('chatMessages');
-        container.innerHTML = data;
-        container.scrollTop = container.scrollHeight; 
-    });
-}
-
-// دالة إرسال رسالة جديدة
+// دالة إرسال رسالة (نسخة العرض - لا تحتاج PHP)
 function sendMessage() {
     const input = document.getElementById('msgInput');
     const text = input.value.trim();
+    const container = document.getElementById('chatMessages');
 
     if (text !== "") {
-        const formData = new FormData();
-        formData.append('msg', text);
+        // إضافة رسالتك للشاشة فوراً
+        const myMsg = document.createElement('div');
+        myMsg.style = "background: #6b4e3d; color: white; padding: 12px 18px; border-radius: 18px 18px 2px 18px; align-self: flex-end; max-width: 85%; font-size: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);";
+        myMsg.textContent = text;
+        container.appendChild(myMsg);
 
-        fetch('chat_handler.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(() => {
-            input.value = ""; 
-            loadMessages(); 
-        });
+        input.value = ""; 
+        container.scrollTop = container.scrollHeight;
+
+        // رد تلقائي وهمي عشان تبهرين اللي يجرب الموقع
+        setTimeout(() => {
+            const reply = document.createElement('div');
+            reply.style = "background: #f0e6dd; padding: 12px 18px; border-radius: 18px 18px 18px 2px; align-self: flex-start; max-width: 85%; font-size: 15px; color: #6b4e3d; box-shadow: 0 2px 5px rgba(0,0,0,0.05);";
+            reply.textContent = "شكراً لتواصلك معنا، سيتم الرد عليك قريباً ✨";
+            container.appendChild(reply);
+            container.scrollTop = container.scrollHeight;
+        }, 1000);
     }
 }
 
 document.getElementById('msgInput')?.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') sendMessage();
 });
-
-
-function toggleCategories() {
-    const area = document.getElementById('categories-area');
-    area.style.display = (area.style.display === 'none') ? 'block' : 'none';
-}
 </script>
 
 <script src="script.js"></script>
 </body>
+
 </html>
