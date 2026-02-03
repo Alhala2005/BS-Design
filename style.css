@@ -906,23 +906,7 @@ a.category-card {
 /* تنسيقات ذكية للجوال بدون تخريب تصميم اللابتوب */
 @media (max-width: 768px) {
     
-    /* 1. ضبط الهيدر (الشريط العلوي) */
-    .header {
-        padding: 10px 15px !important; /* تقليل المسافات الجانبية */
-        flex-direction: column; /* وضع اللوجو فوق الأزرار */
-        gap: 10px;
-    }
 
-    .nav {
-        gap: 8px !important; /* تقريب الأزرار من بعضها */
-        flex-wrap: wrap; /* السماح للأزرار بالنزول لسطر جديد إذا ضاقت المساحة */
-        justify-content: center;
-    }
-
-    .nav-btn {
-        padding: 8px 15px !important; /* تصغير حجم الأزرار قليلاً */
-        font-size: 13px !important;
-    }
 
     /* 2. ضبط القسم الرئيسي (Hero) */
     .hero h1 {
@@ -948,3 +932,4 @@ a.category-card {
         --width: 150px !important; /* تصغير عرض الصور في الجوال */
     }
 }
+
