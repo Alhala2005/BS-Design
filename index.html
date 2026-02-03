@@ -385,23 +385,20 @@ function toggleChat() {
     }
 }
 
-// دالة إرسال الرسالة - نسخة العرض
+// دالة إرسال الرسالة 
 function sendMessage() {
     const input = document.getElementById('msgInput');
     const text = input.value.trim();
     const container = document.getElementById('chatMessages');
 
     if (text !== "") {
-        // رسالة المستخدم
         const myMsg = document.createElement('div');
         myMsg.style = "background: #6b4e3d; color: white; padding: 12px 18px; border-radius: 18px 18px 2px 18px; align-self: flex-end; max-width: 85%; font-size: 15px;";
         myMsg.textContent = text;
         container.appendChild(myMsg);
-
         input.value = ""; 
         container.scrollTop = container.scrollHeight;
 
-        // رد آلي وهمي
         setTimeout(() => {
             const reply = document.createElement('div');
             reply.style = "background: #f0e6dd; padding: 12px 18px; border-radius: 18px 18px 18px 2px; align-self: flex-start; max-width: 85%; font-size: 15px; color: #6b4e3d;";
@@ -417,4 +414,5 @@ function sendMessage() {
 </body>
 
 </html>
+
 
