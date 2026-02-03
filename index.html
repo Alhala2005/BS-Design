@@ -374,41 +374,57 @@
         </div>
     </div>
 </div>
+
 <script>
+
 // دالة فتح وإغلاق المحادثة
 function toggleChat() {
     const win = document.getElementById('chatWindow');
     if (win.style.display === 'none' || win.style.display === '') {
         win.style.display = 'flex';
+        loadMessages();
     } else {
         win.style.display = 'none';
     }
 }
 
-// دالة إرسال الرسالة 
+// دالة جلب الرسائل من قاعدة البيانات
+function loadMessages() {
+    fetch('chat_handler.php')
+    .then(response => response.text())
+    .then(data => {
+        const container = document.getElementById('chatMessages');
+        container.innerHTML = data;
+        container.scrollTop = container.scrollHeight; 
+    });
+}
+
+// دالة إرسال رسالة جديدة
 function sendMessage() {
     const input = document.getElementById('msgInput');
     const text = input.value.trim();
-    const container = document.getElementById('chatMessages');
 
     if (text !== "") {
-        const myMsg = document.createElement('div');
-        myMsg.style = "background: #6b4e3d; color: white; padding: 12px 18px; border-radius: 18px 18px 2px 18px; align-self: flex-end; max-width: 85%; font-size: 15px;";
-        myMsg.textContent = text;
-        container.appendChild(myMsg);
-        input.value = ""; 
-        container.scrollTop = container.scrollHeight;
+        const formData = new FormData();
+        formData.append('msg', text);
 
-        setTimeout(() => {
-            const reply = document.createElement('div');
-            reply.style = "background: #f0e6dd; padding: 12px 18px; border-radius: 18px 18px 18px 2px; align-self: flex-start; max-width: 85%; font-size: 15px; color: #6b4e3d;";
-            reply.textContent = "أهلاً بك.. استفسارك قيد المراجعة ✨";
-            container.appendChild(reply);
-            container.scrollTop = container.scrollHeight;
-        }, 800);
+        fetch('chat_handler.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(() => {
+            input.value = ""; 
+            loadMessages(); 
+        });
     }
 }
-   function toggleCategories() {
+
+document.getElementById('msgInput')?.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') sendMessage();
+});
+
+
+function toggleCategories() {
     const area = document.getElementById('categories-area');
     area.style.display = (area.style.display === 'none') ? 'block' : 'none';
 }
@@ -416,8 +432,4 @@ function sendMessage() {
 
 <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
