@@ -385,39 +385,36 @@ function toggleChat() {
     }
 }
 
-// دالة إرسال رسالة (نسخة العرض - لا تحتاج PHP)
+// دالة إرسال الرسالة - نسخة العرض
 function sendMessage() {
     const input = document.getElementById('msgInput');
     const text = input.value.trim();
     const container = document.getElementById('chatMessages');
 
     if (text !== "") {
-        // إضافة رسالتك للشاشة فوراً
+        // رسالة المستخدم
         const myMsg = document.createElement('div');
-        myMsg.style = "background: #6b4e3d; color: white; padding: 12px 18px; border-radius: 18px 18px 2px 18px; align-self: flex-end; max-width: 85%; font-size: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);";
+        myMsg.style = "background: #6b4e3d; color: white; padding: 12px 18px; border-radius: 18px 18px 2px 18px; align-self: flex-end; max-width: 85%; font-size: 15px;";
         myMsg.textContent = text;
         container.appendChild(myMsg);
 
         input.value = ""; 
         container.scrollTop = container.scrollHeight;
 
-        // رد تلقائي وهمي عشان تبهرين اللي يجرب الموقع
+        // رد آلي وهمي
         setTimeout(() => {
             const reply = document.createElement('div');
-            reply.style = "background: #f0e6dd; padding: 12px 18px; border-radius: 18px 18px 18px 2px; align-self: flex-start; max-width: 85%; font-size: 15px; color: #6b4e3d; box-shadow: 0 2px 5px rgba(0,0,0,0.05);";
-            reply.textContent = "شكراً لتواصلك معنا، سيتم الرد عليك قريباً ✨";
+            reply.style = "background: #f0e6dd; padding: 12px 18px; border-radius: 18px 18px 18px 2px; align-self: flex-start; max-width: 85%; font-size: 15px; color: #6b4e3d;";
+            reply.textContent = "أهلاً بك.. استفسارك قيد المراجعة ✨";
             container.appendChild(reply);
             container.scrollTop = container.scrollHeight;
-        }, 1000);
+        }, 800);
     }
 }
-
-document.getElementById('msgInput')?.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') sendMessage();
-});
 </script>
 
 <script src="script.js"></script>
 </body>
 
 </html>
+
