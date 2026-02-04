@@ -8,6 +8,7 @@
 body {
     color: rosybrown;
 }
+
 /* 🔴 الشريط العلوي 🔴*/
 .header {
     display: flex;
@@ -15,12 +16,10 @@ body {
     justify-content: space-between;
     padding: 5px 60px;
     background: transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف للأسفل */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; 
     z-index: 10;
-    
 }
-
 
 .logo img {
     height: 75px;
@@ -30,10 +29,8 @@ body {
 .nav {
     display: flex;
     gap: 18px;
-
 }
 
-/*   (أزرار التنقل)  */
 .nav-btn {
     background: #f2f2f2;
     padding: 12px 28px;
@@ -47,28 +44,26 @@ body {
     border: 2px solid rgba(232, 222, 211, 0.6);  
 }
 
-/*  التأثير عند مرور الماوس على الأزرار  */
 .nav-btn:hover {
-box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
-  transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
+    transform: translateY(-3px);
 }
-
 
 .hero {
     min-height: 100vh; 
     background: linear-gradient(135deg,#f5f1ec , #f5f1ec);
     display: flex;
-    flex-direction: column; /* ترتيب عمودي: البطاقات فوق والنص تحت */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 110px 20px;
     gap: 60px;    
 }
+
 .hero-content {
     text-align: center;
     color: #492F00;  
 }
-
 
 .hla{
     text-align: center;
@@ -97,6 +92,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     transition: 0.3s;
     margin-top: 6%;
 }
+
 .main-btn:hover {
     background-color: #b08a63;
 }
@@ -113,12 +109,11 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     transition: 0.3s;
     margin-top: 6%;
 }
+
 .btn:hover {
     background-color: #b08a63;
 }
 
-
-/* 🔴 شريط البطاقات  🔴*/
 .carousel-wrapper {
   --width: 220px;
   --gap: 40px;
@@ -127,26 +122,20 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   --ani-speed: 18s;
   overflow: hidden;
   margin: 0px auto;
-  /*هذي تخلي البطايق تجي 3 لو ابي كلهم يطلعون احذفها*/
   position: relative;
   background: transparent;
-}
-
-
-.carousel-wrapper {
-    background-color: transparent;
 }
 
 .carousel-wrapper::before{
   left: 0;
   background-image: linear-gradient(to right,var(--bg-clr) 0%,transparent 50%);
 }
+
 .carousel-wrapper::after{
   right: 0;
   background-image: linear-gradient(to left,var(--bg-clr) 0%,transparent 50%);
 }
 
-/*  مسار البطاقات  */
 .carousel {
   display: flex;
   align-items: center;
@@ -154,14 +143,11 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   animation: slide 25s linear infinite;
 }
 
-/*  البطاقة  */
 .item {
   flex: 0 0 var(--width);
   padding: 0;
 }
 
-
-/*  صورة البطاقة  */
 .item > img {
   width: 100%;
   height: 222px;
@@ -169,12 +155,11 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-   cursor: pointer;
-   margin-top: 22%;
-   margin-bottom: 22%;
+  cursor: pointer;
+  margin-top: 22%;
+  margin-bottom: 22%;
 }
 
-/*  الحركة  */
 .carousel {
   animation-direction: reverse;
 }
@@ -208,15 +193,14 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
 }
 
 .button:hover {
-transform: translateY(-3px);
-box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
 }
 
 .icon {
   font-size: 20px;
 }
 
-/*  خلفية النافذة (Blur + تعتيم)  */
 .auth-overlay {
   position: fixed;
   inset: 0;
@@ -228,7 +212,6 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   z-index: 1000;
 }
 
-/*  🔴صندوق التسجيل 🔴 */
 .auth-box {
   width: 100%;
   max-width: 380px;
@@ -239,7 +222,6 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   animation: authFade 0.35s ease;
 }
 
-/*  العنوان  */
 .auth-box .heading {
   text-align: center;
   font-size: 24px;
@@ -247,12 +229,10 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   color: #6b4e3d;
 }
 
-/*  الفورم  */
 .auth-box .form {
   margin-top: 20px;
 }
 
-/*  الحقول  */
 .auth-box .input {
   width: 100%;
   padding: 14px 16px;
@@ -262,13 +242,13 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   background: #fafafa;
   margin-top: 14px;
 }
+
 .auth-box .input:focus {
   outline: none;
   border-color: #c7a27c;
   background: #fff;
 }
 
-/*  زر الدخول  */
 .auth-box .login-button {
   width: 100%;
   margin-top: 22px;
@@ -287,7 +267,6 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   background: #b08a63;
 }
 
-/*  نص توضيحي  */
 .auth-note {
   margin-top: 14px;
   font-size: 12px;
@@ -295,7 +274,6 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   color: #8b7765;
 }
 
-/*  رابط إعادة الإرسال  */
 .resend {
   display: block;
   margin-top: 12px;
@@ -304,7 +282,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   color: #c7a27c;
   text-decoration: none;
 }
-/*  رابط التحويل  */
+
 .switch-auth {
   display: block;
   margin-top: 14px;
@@ -315,8 +293,17 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   cursor: pointer;
 }
 
+@keyframes authFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-/*   زر الإغلاق  */
 .auth-box {
     position: relative; 
 }
@@ -338,25 +325,25 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     color: #492F00;
 }
 
-/*  تنسيق أيقونة الحساب    */
 .user-icon-wrapper {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .user-icon-wrapper svg {
     display: inline-block;
 }
 
-/*  تنسيق مجموعة إدخال رقم الجوال والدوله ()  */
 .phone-input-group {
     display: flex;
-    direction: ltr; /*  ترتيب العناصر من اليسار لليمين */
+    direction: ltr;
     border: 1px solid #e0d4c8;
     border-radius: 18px;
     overflow: hidden; 
     margin-top: 14px;
     background: #fafafa;
 }
+
 .country-code-picker {
     flex-shrink: 0; 
     padding: 14px 10px;
@@ -369,16 +356,15 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     color: #492F00;
 }
 
-/*  تنسيق الحقل داخل المجموعة */
 .phone-input-group .input {
     flex-grow: 1; 
     padding: 14px 16px;
-    border: none !important; /* لإزالة الحدود المكررة */
+    border: none !important;
     outline: none;
     text-align: right; 
     font-size: 14px;
     background: #fafafa;
-    margin: 0 !important; /* لإزالة أي هوامش  */
+    margin: 0 !important;
 }
 
 .auth-box .input:not(.phone-number-field, .email-field) {
@@ -388,59 +374,62 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
 .email-field {
     margin-top: 14px;
 }
-/*🔴*/
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1000px;
-            justify-content: center;
-        }
-        .card {
-            background: rgba(249, 247, 247, 0.8); 
-            border-radius: 15px;
-            padding: 25px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            margin-top: 6%;
-            backdrop-filter: blur(10px); 
-             border: 1px solid rgba(150, 37, 37, 0.3);
-        }
-        .card:hover {
-            transform: translateY(-5px); 
-        }
 
-        .logo-box {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #fce4ec; 
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    justify-content: center;
+}
 
-        .logo-box img {
-            width: 110%; /* حجم اللوقو داخل الدائرة */
-            height: auto;
-        }
+.card {
+    background: rgba(249, 247, 247, 0.8); 
+    border-radius: 15px;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    margin-top: 6%;
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(150, 37, 37, 0.3);
+}
 
-        .card h3 {
-            color:  #492F00; 
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
+.card:hover {
+    transform: translateY(-5px); 
+}
 
-        .card p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
+.logo-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: #fce4ec; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-box img {
+    width: 110%;
+    height: auto;
+}
+
+.card h3 {
+    color:  #492F00; 
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .containere {
   width: 100%;
   height: 100%;
@@ -472,35 +461,38 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     12.5px 12.5px; 
 }
 
-/* 🔴 صفحة التصنيفات 🔴 */
-
 .categories-container {
   max-width: 900px;
   margin: auto;
   text-align: center;
 }
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   background-color: #f5f1ec;
 }
+
 .category-icon {
     width: 80px;          
     height: 80px;          
     margin-bottom: 10px;   
     border-radius: 10px;   
 }
+
 .category-icone {
     width:100px;          
     height: 90px;          
-    border-radius: 10px;   /* لجعل الزوايا ناعمة */
+    border-radius: 10px;
 }
+
 .category-icont{
     width:80px;          
     height: 70px;          
     border-radius: 10px; 
 }
+
 .category-card {
   display: flex;
   flex-direction: column;
@@ -515,25 +507,23 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
   transition: 0.3s ease;
   font-family: inherit;
 }
+
 .category-card span {
   display: block;
   margin-top: 15px;
   font-weight: 500;
 }
+
 .category-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-
-
-/*🔴تنسيق المنتجات 🔴*/
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* تصميم كرت المنتج */
 .product-card {
     background: #ffffff;
     border-radius: 25px;
@@ -544,9 +534,10 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     cursor: pointer;
     border: 1px solid #f0f0f0;
 }
+
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(107, 78, 61, 0.15); /* لون ظلال يناسب الهوية */
+    box-shadow: 0 20px 40px rgba(107, 78, 61, 0.15);
 }
 
 .product-img img {
@@ -564,6 +555,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     padding: 20px;
     text-align: right;
 }
+
 .product-info h3 {
     font-size: 18px;
     color: #333;
@@ -587,7 +579,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     font-size: 12px;
     z-index: 10;
 }
-/* زر الاختيار الإبداعي */
+
 .select-btn {
     width: 100%;
     background: #f8f5f2; 
@@ -604,9 +596,9 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     background: #6b4e3d;
     color: white;
 }
+
 .categories-grid {
     display: grid;
-    /* هذا السطر يضمن ظهور 3 أعمدة متساوية تماماً */
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     padding: 20px;
@@ -625,25 +617,24 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     border-radius: 15px; 
     padding: 30px 20px;
     cursor: pointer;
-    transition: all 0.3s ease; /* سرعة تغيير اللون والحركة */
+    transition: all 0.3s ease;
     text-decoration: none;
     color: inherit;
 }
+
 .category-card:hover {
     background: #fdfaf8; 
     border-color: #6b4e3d; 
-    transform: translateY(-5px); /* رفعة بسيطة للأعلى */
+    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(107, 78, 61, 0.1); 
 }
-/* لتنسيق النص والأيقونة داخل الزر */
+
 .category-card span {
     font-family: 'Tajawal', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
     color: #492F00;
 }
-
-/*🔴الجزء السفلي🔴*/
 
 .main-footer {
     background-color: #fdfdfc; 
@@ -657,7 +648,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr; /* توزيع الأعمدة */
+    grid-template-columns: 1fr 1fr 1.5fr;
     gap: 40px;
 }
 
@@ -726,6 +717,7 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     margin-top: 10px;
     opacity: 0.8;
 }
+
 .contact-link {
     display: flex;
     align-items: center;
@@ -739,12 +731,12 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
 
 .contact-link:hover {
     color: #d2b48c; 
-    transform: translateX(-5px); /* حركة بسيطة لليمين */
+    transform: translateX(-5px);
 }
 
 .contact-link i {
     font-size: 18px;
-    width: 25px; /* توحيد مساحة الأيقونات */
+    width: 25px;
 }
 
 .social-icons a {
@@ -759,13 +751,14 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     margin-left: 10px;
     color: #555;
     transition: 0.3s;
-   
 }
+
 .social-icons a:hover {
     background: #d2b48c;
     color: #fff;
     transform: translateY(-3px);
 }
+
 .footer-icon {
     width: 27px; 
     height: 31px;
@@ -799,31 +792,33 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
 }
 
 .contact-link:hover .footer-icon {
-    transform: scale(1.1); /* تكبير بسيط للأيقونة عند مرور الماوس */
+    transform: scale(1.1);
 }
 
 .contact-link:hover span {
     color: #d2b48c; 
 }
 
-/*🔴 تنسيق موحد لصور المنتجات */
 .product-img-wrapper {
     overflow: hidden;
     width: 100%;
     height: 250px;
     position: relative;
 }
+
 .product-slider {
     display: flex;
     width: 100%;
     transition: transform 0.5s ease-in-out;
 }
+
 .product-slider img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     flex: 0 0 100%;
 }
+
 .otp-input-box {
     width: 50px;
     height: 60px;
@@ -837,10 +832,12 @@ box-shadow: 0 10px 22px rgba(232, 222, 211, 0.5);
     outline: none;
     transition: 0.3s;
 }
+
 .otp-input-box:focus {
     border-color: #6b4e3d;
     box-shadow: 0 0 10px rgba(107, 78, 61, 0.1);
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -858,7 +855,6 @@ footer {
     border-top: 1px solid #eee;
 }
 
-/* لمنع روابط التصنيفات من تغيير الصفحة */
 a.category-card {
     cursor: pointer;
     text-decoration: none;
@@ -866,7 +862,6 @@ a.category-card {
     display: block;
 }
 
-/* زر الرجوع */
 .back-home-btn {
     background: #6b4e3d;
     color: white;
@@ -885,12 +880,512 @@ a.category-card {
     transform: translateY(-2px);
 }
 
-
 .categories-grid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:30px;
     direction: rtl;
-
 }
 
+/* القائمة الجانبية */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-header {
+    padding: 25px 20px;
+    background: #f5f1ec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0d4c8;
+}
+
+.menu-header h3 {
+    color: #826a3e;
+    margin: 0;
+    font-size: 20px;
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #826a3e;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu-items li {
+    margin-bottom: 0;
+}
+
+.menu-items a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: #492F00;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-items a:hover {
+    background: #f5f1ec;
+    color: #826a3e;
+    padding-right: 35px;
+}
+
+/* ========================================
+   🔴 للجوال فقط 🔴
+   ======================================== */
+
+@media (max-width: 768px) {
+    
+    
+    /* الشريط العلوي */
+    .header {
+        padding: 3px 22px;
+        background: #fff;
+        border-radius: 25px;
+        margin: 15px;
+        display: grid;
+        grid-template-columns: 60px 1fr 80px;
+        gap: 10px;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    /* زر القائمة - يسار */
+    .header::before {
+        content: '';
+        grid-column: 1;
+        width: 55px;
+        height: 55px;
+        background: #f5f1ec url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23826a3e" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>') no-repeat center;
+        background-size: 24px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    
+    /* اللوقو - وسط */
+    .logo {
+        grid-column: 2;
+        text-align: center;
+    }
+    
+    .logo img {
+        height: 55px;
+    }
+    
+    /* إخفاء القائمة الأصلية */
+    .nav {
+        display: none !important;
+    }
+    
+    /* مربع تسجيل الدخول والسلة - يمين */
+    .button-container {
+        grid-column: 3;
+        width: 75px;
+        height: 55px;
+        background: #f5f1ec;
+        border-radius: 15px;
+        padding: 8px;
+        gap: 8px;
+        border: none;
+        box-shadow: none;
+        display: flex;
+    }
+    
+    /* إخفاء زر البحث */
+    .button-container .button:nth-child(1) {
+        display: none !important;
+    }
+    
+    .button {
+        padding: 4px;
+    }
+    
+    .icon {
+        font-size: 22px;
+    }
+    
+    /* بإتقان نجسد الأفكار */
+    .hla{
+    text-align: center;
+    color: #826a3e;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: linear-gradient(135deg,#f5f1ec , #ffffff); }
+    
+    .hla h1 {
+        font-size: 28px !important;
+        padding: 0;
+        color: #826a3e !important;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+        padding: 15px;
+    }
+    
+    /* شريط التمرير */
+    .containere {
+        margin: 15px;
+        padding: 25px 0;
+        border-radius: 25px;
+    }
+    
+    .carousel-wrapper {
+        --width: 160px;
+        --gap: 40px;
+        margin: 0;
+    }
+    
+    .carousel-wrapper::before,
+    .carousel-wrapper::after {
+        display: none;
+    }
+    
+    .carousel {
+        animation: none;
+    }
+    
+    .item > img {
+        height: 200px;
+        width: 200px;
+        margin: 0;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* أزرار التمرير */
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        top: 30%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }
+    
+    .carousel-prev svg,
+    .carousel-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #826a3e;
+        stroke-width: 3;
+        fill: none;
+    }
+    
+    /* إخفاء النقاط */
+    .carousel-dots {
+        display: none !important;
+    }
+    
+
+    
+    /* من نحن */
+    #about-us-section {
+        padding: 25px 15px !important;
+        margin: 15px !important;
+        border-radius: 25px;
+    }
+    
+    #about-us-section > div {
+        flex-direction: column !important;
+        gap: 25px !important;
+        margin-top: 0 !important;
+    }
+    
+    #about-us-section > div > div:first-child {
+        order: 1 !important;
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    #about-us-section > div > div:last-child {
+        order: 2 !important;
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    #about-us-section h2 {
+        font-size: 24px !important;
+    }
+    
+    #about-us-section p,
+    #about-us-section li {
+        font-size: 14px !important;
+    }
+    
+    #about-us-section h3 {
+        font-size: 18px !important;
+    }
+    
+    #about-us-section img {
+        width: 140px !important;
+    }
+    
+
+
+
+
+    /* البطاقات الـ3 */
+    .hero {
+        padding: 0;
+        gap: 15px;
+        min-height: auto;
+    }
+    
+    .container {
+        margin: 15px !important;
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .card {
+        width: 100%;
+        margin-top: 0 !important;
+        padding: 20px;
+        background: #fff;
+        border-radius: 20px;
+    }
+    
+    .card h3 {
+        font-size: 1rem;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+    }
+    
+    .logo-box {
+        width: 65px;
+        height: 65px;
+    }
+    
+    /* قسم التصنيفات */
+    .hero-content {
+        margin: 15px;
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+    
+    .hero-content h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+        padding: 0;
+    }
+    
+    .main-btn {
+        margin-top: 20px;
+        padding: 12px 35px;
+        font-size: 15px;
+    }
+    
+    #categories-area {
+        padding: 20px 0 !important;
+        background: transparent !important;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+        padding: 0 15px;
+    }
+    
+    .category-card {
+        padding: 20px;
+        background: #fff;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .category-card span {
+        font-size: 0.95rem;
+    }
+    
+    .category-icon,
+    .category-icont {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .category-icone {
+        width: 70px;
+        height: 70px;
+    }
+    
+
+
+
+    
+    /* Footer - 3 أعمدة كالكمبيوتر */
+    .main-footer {
+        padding: 25px 15px;
+        margin: 15px;
+        background: #fff;
+        border-radius: 25px 25px 0 0;
+        border-top: none;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .footer-section h3 {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    
+    .footer-section p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+    
+    .footer-section li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-section li a {
+        font-size: 11px;
+    }
+    
+    .contact-link {
+        font-size: 11px;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-icon,
+    .footere-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin-left: 5px;
+    }
+    
+    .insta-icon {
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+    }
+    
+
+
+
+    
+    /* نافذة التسجيل */
+    .auth-box {
+        width: 90%;
+        max-width: 90%;
+        padding: 20px;
+        margin: 15px;
+    }
+    
+    .auth-box .heading {
+        font-size: 18px;
+    }
+    
+    .otp-input-box {
+        width: 45px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    /* نافذة المحادثة */
+    #chatWindow > div {
+        width: calc(100% - 30px) !important;
+        height: 90vh !important;
+        margin: 15px;
+        border-radius: 25px;
+    }
+    
+    #chatBubble {
+        bottom: 25px !important;
+        left: 25px !important;
+        width: 55px !important;
+        height: 55px !important;
+    }
+    
+    /* المنتجات */
+    .products-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 15px;
+    }
+    
+    .product-card {
+        background: #fff;
+        border-radius: 20px;
+    }
+}
