@@ -192,3 +192,96 @@ function changeSlide(category, id, direction) {
     slider.style.transform =
         `translateX(+${slidersIndex[sliderId] * 100}%)`;
 }
+// إضافة القائمة الجانبية والأزرار عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // إضافة القائمة الجانبية
+    const menuHTML = `
+        <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <h3>القائمة</h3>
+                <button class="menu-close" onclick="closeMenu()">×</button>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#home-section" onclick="closeMenu()">الرئيسية</a></li>
+                <li><a href="#categories-container" onclick="closeMenu()">التصنيفات</a></li>
+                <li><a href="category.php">المنتجات</a></li>
+                <li><a href="contact.php">تواصل معنا</a></li>
+            </ul>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', menuHTML);
+    
+    // إضافة وظيفة فتح القائمة لزر القائمة
+    const header = document.querySelector('.header');
+    if (header && window.innerWidth <= 768) {
+        header.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            if (clickX < 70) { // إذا كان الضغط على الجزء الأيسر (زر القائمة)
+                openMenu();
+            }
+        });
+        
+        // إضافة أزرار التمرير للكاروسيل
+        const containere = document.querySelector('.containere');
+        if (containere) {
+            const navButtons = `
+                <button class="carousel-prev" onclick="moveCarousel('prev')">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-next" onclick="moveCarousel('next')">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            `;
+            containere.insertAdjacentHTML('beforeend', navButtons);
+        }
+    }
+});
+
+// فتح القائمة
+function openMenu() {
+    document.getElementById('sideMenu').classList.add('active');
+    document.getElementById('menuOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// إغلاق القائمة
+function closeMenu() {
+    document.getElementById('sideMenu').classList.remove('active');
+    document.getElementById('menuOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// تحريك الكاروسيل
+let currentIndex = 0;
+function moveCarousel(direction) {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel .item');
+    const totalItems = items.length / 2; // لأن العناصر مكررة
+    
+    if (direction === 'next') {
+        currentIndex++;
+        if (currentIndex >= totalItems) {
+            currentIndex = 0;
+        }
+    } else {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = totalItems - 1;
+        }
+    }
+    
+    const itemWidth = 160; // عرض البطاقة
+    const gap = 12; // المسافة بين البطاقات
+    const offset = currentIndex * (itemWidth + gap);
+    
+    carousel.style.transform = `translateX(${offset}px)`;
+    carousel.style.transition = 'transform 0.4s ease';
+}
+
