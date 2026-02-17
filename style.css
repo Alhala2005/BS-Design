@@ -1110,14 +1110,15 @@ a.category-card {
     border-radius: 0;
     overflow: hidden;
     
-    /* الخلفية الأساسية */
-    background-color: #fce4ec !important; 
-    background-image: 
-        radial-gradient(#492F00 1.5px, transparent 1.5px), 
-        radial-gradient(circle, #e5e5f7 20%, transparent 25%) !important;
+    /* 1. لون الخلفية (البنفسجي الفاتح/الرصاصي اللي في صورتك) */
+    background-color: #d8d8e5 !important; 
 
-    background-size: 15px 15px, 30px 30px !important;
-    background-position: 0 0, 0 0 !important;
+    /* 2. النقاط البيضاء - جعلناها شفافة قليلاً لتكون ناعمة */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.8) 20%, transparent 20%) !important;
+
+    /* 3. التحكم في حجم وتباعد النقاط */
+    background-size: 16px 16px !important; 
+    
     opacity: 1 !important;
 }
     
@@ -1450,6 +1451,7 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
 
