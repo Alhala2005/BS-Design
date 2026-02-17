@@ -1104,13 +1104,16 @@ a.category-card {
         padding: 15px;
     }
     
-    .containere {
-        margin: 30px 0 0 0;
-        padding: 25px 0;
-        border-radius: 0;
-        overflow: hidden;
-    }
-    
+  .containere {
+    margin: 30px 0 0 0;
+    padding: 25px 0;
+    border-radius: 0;
+    overflow: hidden;
+    background-image: url('img/kala.png') !important;
+    background-size: cover !important;
+    background-repeat: repeat !important;
+    opacity: 1 !important;
+}
     .carousel-wrapper {
         margin: 0;
         padding: 0;
@@ -1440,3 +1443,4 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
