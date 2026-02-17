@@ -1109,17 +1109,33 @@ a.category-card {
     padding: 25px 0;
     border-radius: 0;
     overflow: hidden;
-    
-    /* 1. لون الخلفية (البنفسجي الفاتح/الرصاصي اللي في صورتك) */
-    background-color: #d8d8e5 !important; 
+  background-color: #e5e5f7;
+  opacity: 0.7;
+  background:
+    radial-gradient(
+      circle,
+      transparent 20%,
+      #e5e5f7 20%,
+      #fce4ec 80%,
+      transparent 80%,
+      transparent 
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      )
+    12.5px 12.5px,
+    radial-gradient(#492F00 2px, transparent 2px);
+    background-size:
+    25px 25px,
+    25px 25px,
+    12.5px 12.5px,
+    12.5px 12.5px; 
 
-    /* 2. النقاط البيضاء - جعلناها شفافة قليلاً لتكون ناعمة */
-    background-image: radial-gradient(rgba(255, 255, 255, 0.8) 20%, transparent 20%) !important;
-
-    /* 3. التحكم في حجم وتباعد النقاط */
-    background-size: 16px 16px !important; 
-    
-    opacity: 1 !important;
 }
     
     .carousel-wrapper {
@@ -1451,6 +1467,7 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
 
