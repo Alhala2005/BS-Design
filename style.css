@@ -479,8 +479,8 @@ box-shadow: 0 10px 30px rgba(171, 13, 13, 0.1);
         transparent 80%,
         transparent
       )
-    12.5px 12.5px,
-      radial-gradient(rgba(210, 180, 140, 0.3) 2px, transparent 2px);
+  12.5px 12.5px,
+    radial-gradient(#492F00 2px, transparent 2px);
     background-size:
     25px 25px,
     25px 25px,
@@ -1104,12 +1104,20 @@ a.category-card {
         padding: 15px;
     }
     
-    .containere {
-        margin: 30px 0 0 0;
-        padding: 25px 0;
-        border-radius: 0;
-        overflow: hidden;
-    }
+ .containere {
+    margin: 30px 0 0 0;
+    padding: 25px 0;
+    border-radius: 0;
+    overflow: hidden;
+ 
+    background-color: #e5e5f7 !important;
+    background-image: 
+        radial-gradient(#492F00 1.5px, transparent 1.5px), 
+        radial-gradient(circle, #fce4ec 40%, #e5e5f7 70%) !important;
+    background-size: 13px 13px, 26px 26px !important;
+    background-position: 0 0, 0 0 !important;
+    opacity: 1 !important;
+}
     
     .carousel-wrapper {
         margin: 0;
@@ -1440,5 +1448,6 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
