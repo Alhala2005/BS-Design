@@ -1110,7 +1110,7 @@ a.category-card {
     border-radius: 0;
     overflow: hidden;
     background-image: url('img/kala.png') !important;
-background-size: 360px !important;
+background-size: 460px !important;
       background-repeat: repeat !important;
     opacity: 1 !important;
 }
@@ -1443,5 +1443,6 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
