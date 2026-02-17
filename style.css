@@ -480,6 +480,7 @@ box-shadow: 0 10px 30px rgba(171, 13, 13, 0.1);
         transparent
       )
     12.5px 12.5px,
+      radial-gradient(rgba(210, 180, 140, 0.3) 2px, transparent 2px);
     background-size:
     25px 25px,
     25px 25px,
@@ -1439,4 +1440,5 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
