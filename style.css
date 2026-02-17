@@ -1,4 +1,4 @@
-* {
+f* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -476,7 +476,7 @@ box-shadow: 0 10px 30px rgba(171, 13, 13, 0.1);
       #e5e5f7 80%,
       transparent 80%
     ) 12.5px 12.5px,
-    radial-gradient(rgba(130,106,62,0.25) 1.5px, transparent 1.5px);
+    radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
 
   background-size:
     25px 25px,
@@ -1436,5 +1436,6 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
