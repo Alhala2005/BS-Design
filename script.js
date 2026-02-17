@@ -1,35 +1,17 @@
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.item');
-const dotsContainer = document.querySelector('.carousel-dots');
 const itemWidth = 240; 
 const slidersIndex = {};
 
 let index = 0;
-let dots = [];
 let isTransitioning = false;
 
-// 1.  وعدم وجود فراغ
 items.forEach(item => {
     let clone = item.cloneNode(true);
     carousel.appendChild(clone);
 });
 
-// 2. إنشاء النقاط (9 نقاط فقط)
-function createDots() {
-    items.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.addEventListener('click', () => {
-            if (isTransitioning) return;
-            index = i;
-            updateCarousel();
-            resetTimer();
-        });
-        dotsContainer.appendChild(dot);
-        dots.push(dot);
-    });
-}
-
-// 3. دالة التحريك
+// دالة التحريك
 function updateCarousel(isInstant = false) {
     if (isInstant) {
         carousel.style.transition = 'none';
@@ -37,19 +19,14 @@ function updateCarousel(isInstant = false) {
         carousel.style.transition = 'transform 0.8s ease';
         isTransitioning = true;
     }
-        carousel.style.transform = `translateX(${index * itemWidth}px)`;
-
-    // تحديث النقطة النشطة
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[index % items.length]) {
-        dots[index % items.length].classList.add('active');
-    }
+    carousel.style.transform = `translateX(${index * itemWidth}px)`;
+    
     if (!isInstant) {
         setTimeout(() => { isTransitioning = false; }, 800);
     }
 }
 
-// 4. الحركة التلقائية  
+// الحركة التلقائية  
 function moveNext() {
     if (isTransitioning) return;
     index++;
@@ -62,7 +39,7 @@ function moveNext() {
     }
 }
 
-// 5. الضغط على الصور للتحريك
+// الضغط على الصور للتحريك
 document.querySelectorAll('.item').forEach((item, i) => {
     item.addEventListener('click', () => {
         if (isTransitioning) return;
@@ -73,7 +50,6 @@ document.querySelectorAll('.item').forEach((item, i) => {
 });
 
 // تشغيل وتوقيت
-createDots();
 updateCarousel();
 let autoSlide = setInterval(moveNext, 3000);
 function resetTimer() {
@@ -81,7 +57,8 @@ function resetTimer() {
     autoSlide = setInterval(moveNext, 3000);
 }
 
-/* 🔴 عناصر النوافذ 🔴 */
+/* 🔴  تسجيل الدخول 🔴*/
+
 const authOverlay = document.getElementById('authOverlay');
 const otpOverlay = document.getElementById('otpOverlay');
 const loginForm = document.getElementById('loginForm');
@@ -95,37 +72,36 @@ const switchAuth = document.getElementById('switchAuth');
 let mode = 'phone';
 
 function openAuth() {
-  authOverlay.style.display = 'flex';
-  mode = 'phone';
-  authTitle.textContent = 'تسجيل الدخول برقم الجوال';
-  phoneGroup.style.display = 'flex';
-  emailInput.style.display = 'none';
-  authInput.focus();
-}
-
-function closeAuth() {
-  authOverlay.style.display = 'none';
-  otpOverlay.style.display = 'none';
-}
-
-switchAuth.addEventListener('click', e => {
-  e.preventDefault();
-  if (mode === 'phone') {
-    mode = 'email';
-    authTitle.textContent = 'تسجيل الدخول بالبريد الإلكتروني';
-    phoneGroup.style.display = 'none';
-    emailInput.style.display = 'block';
-    emailInput.focus();
-  } else {
+    authOverlay.style.display = 'flex';
     mode = 'phone';
     authTitle.textContent = 'تسجيل الدخول برقم الجوال';
     phoneGroup.style.display = 'flex';
     emailInput.style.display = 'none';
     authInput.focus();
-  }
+}
+
+function closeAuth() {
+    authOverlay.style.display = 'none';
+    otpOverlay.style.display = 'none';
+}
+
+switchAuth.addEventListener('click', e => {
+    e.preventDefault();
+    if (mode === 'phone') {
+        mode = 'email';
+        authTitle.textContent = 'تسجيل الدخول بالبريد الإلكتروني';
+        phoneGroup.style.display = 'none';
+        emailInput.style.display = 'block';
+        emailInput.focus();
+    } else {
+        mode = 'phone';
+        authTitle.textContent = 'تسجيل الدخول برقم الجوال';
+        phoneGroup.style.display = 'flex';
+        emailInput.style.display = 'none';
+        authInput.focus();
+    }
 });
 
-/*   المربعات الأربعة للرمز  */
 const otpInputs = document.querySelectorAll('.otp-input-box');
 otpInputs.forEach((input, index) => {
     input.addEventListener('input', () => {
@@ -144,7 +120,6 @@ loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const targetValue = mode === 'phone' ? authInput.value : emailInput.value;
     
-    // محاكاة نجاح الطلب بدون الحاجة لملف PHP
     const code = Math.floor(1000 + Math.random() * 9000);
     alert("نموذج تجريبي - رمز التحقق لمتجر BS هو: " + code); 
     sessionStorage.setItem('validOTP', code.toString());
@@ -155,19 +130,21 @@ loginForm.addEventListener('submit', function(e) {
     otpInputs[0].focus();
 });
 
-/*  التحقق من الرمز   */
 otpForm.addEventListener('submit', e => {
-  e.preventDefault();
-  let enteredCode = "";
-  otpInputs.forEach(input => enteredCode += input.value);
-  
-  if (enteredCode === sessionStorage.getItem('validOTP')) {
-    alert('أهلاً بك! تم التحقق بنجاح');
-    window.location.reload();
-  } else {
-    alert('الرمز غير صحيح، حاول مرة أخرى');
-  }
+    e.preventDefault();
+    let enteredCode = "";
+    otpInputs.forEach(input => enteredCode += input.value);
+    
+    if (enteredCode === sessionStorage.getItem('validOTP')) {
+        alert('أهلاً بك! تم التحقق بنجاح');
+        window.location.reload();
+    } else {
+        alert('الرمز غير صحيح، حاول مرة أخرى');
+    }
 });
+
+/* 🔴 سلايدر المنتجات 🔴 */
+
 function changeSlide(category, id, direction) {
     const sliderId = `slider-${category}-${id}`;
     const slider = document.getElementById(sliderId);
@@ -189,10 +166,11 @@ function changeSlide(category, id, direction) {
         slidersIndex[sliderId] = 0;
     }
 
-    slider.style.transform =
-        `translateX(+${slidersIndex[sliderId] * 100}%)`;
+    slider.style.transform = `translateX(+${slidersIndex[sliderId] * 100}%)`;
 }
-// إضافة القائمة الجانبية والأزرار عند تحميل الصفحة
+
+/*🔴 القائمة الجانبية للجوال 🔴*/
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // إضافة القائمة الجانبية
@@ -203,85 +181,72 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>القائمة</h3>
                 <button class="menu-close" onclick="closeMenu()">×</button>
             </div>
-            <ul class="menu-items">
-                <li><a href="#home-section" onclick="closeMenu()">الرئيسية</a></li>
-                <li><a href="#categories-container" onclick="closeMenu()">التصنيفات</a></li>
-                <li><a href="category.php">المنتجات</a></li>
-                <li><a href="contact.php">تواصل معنا</a></li>
-            </ul>
+        <ul class="menu-items">
+    <li><a href="#home-section" onclick="closeMenu()">الرئيسية</a></li>
+    <li><a href="#categories-container" onclick="openCategories()">التصنيفات</a></li>
+    <li><a href="category.php" onclick="closeMenu()">المنتجات</a></li>
+    <li><a href="my_orders.php" onclick="closeMenu()">الطلبات</a></li>
+    <li><a href="#contact-us" onclick="closeMenu()">تواصل معنا</a></li>
+</ul>
         </div>
     `;
     document.body.insertAdjacentHTML('beforeend', menuHTML);
-    
-    // إضافة وظيفة فتح القائمة لزر القائمة
-    const header = document.querySelector('.header');
-    if (header && window.innerWidth <= 768) {
-        header.addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            if (clickX < 70) { // إذا كان الضغط على الجزء الأيسر (زر القائمة)
-                openMenu();
-            }
-        });
-        
-        // إضافة أزرار التمرير للكاروسيل
-        const containere = document.querySelector('.containere');
-        if (containere) {
-            const navButtons = `
-                <button class="carousel-prev" onclick="moveCarousel('prev')">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <button class="carousel-next" onclick="moveCarousel('next')">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
+        if (window.innerWidth <= 768) {
+        const header = document.querySelector('.header');
+        if (header) {
+            const menuBtn = document.createElement('button');
+            menuBtn.className = 'mobile-menu-btn';
+            menuBtn.innerHTML = `
+                <svg width="24" height="24"  fill="none" stroke="#826a3e" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
             `;
-            containere.insertAdjacentHTML('beforeend', navButtons);
+            
+            menuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                openMenu();
+            });
+            
+            header.appendChild(menuBtn);
         }
     }
 });
 
-// فتح القائمة
 function openMenu() {
-    document.getElementById('sideMenu').classList.add('active');
-    document.getElementById('menuOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-// إغلاق القائمة
-function closeMenu() {
-    document.getElementById('sideMenu').classList.remove('active');
-    document.getElementById('menuOverlay').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-// تحريك الكاروسيل
-let currentIndex = 0;
-function moveCarousel(direction) {
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel .item');
-    const totalItems = items.length / 2; // لأن العناصر مكررة
-    
-    if (direction === 'next') {
-        currentIndex++;
-        if (currentIndex >= totalItems) {
-            currentIndex = 0;
-        }
-    } else {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = totalItems - 1;
-        }
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    if (sideMenu && menuOverlay) {
+        sideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
-    
-    const itemWidth = 160; // عرض البطاقة
-    const gap = 12; // المسافة بين البطاقات
-    const offset = currentIndex * (itemWidth + gap);
-    
-    carousel.style.transform = `translateX(${offset}px)`;
-    carousel.style.transition = 'transform 0.4s ease';
+}
+function closeMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    if (sideMenu && menuOverlay) {
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
+function openCategories() {
+    closeMenu();
+        setTimeout(() => {
+        const categoriesSection = document.getElementById('categories-container');
+        if (categoriesSection) {
+            categoriesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+            const area = document.getElementById('categories-area');
+        if (area) area.style.display = 'block';
+            const mainBtn = document.querySelector('.main-btn');
+        if (mainBtn) mainBtn.style.display = 'none';
+    }, 300);
+}
+function toggleCategories() {
+    openCategories();
+}
