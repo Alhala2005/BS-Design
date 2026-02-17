@@ -1110,7 +1110,7 @@ a.category-card {
     border-radius: 0;
     overflow: hidden;
     background: #fce4ec !important;
-    background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px) !important;
+    background-image: radial-gradient(#ffffff 1.5px, transparent 2.5px) !important;
     background-size: 18px 18px !important;
     opacity: 1 !important;
 }
@@ -1444,6 +1444,7 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
 
