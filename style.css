@@ -1104,17 +1104,19 @@ a.category-card {
         padding: 15px;
     }
     
- .containere {
+.containere {
     margin: 30px 0 0 0;
     padding: 25px 0;
     border-radius: 0;
     overflow: hidden;
- 
-    background-color: #e5e5f7 !important;
+    
+    /* الخلفية الأساسية */
+    background-color: #fce4ec !important; 
     background-image: 
         radial-gradient(#492F00 1.5px, transparent 1.5px), 
-        radial-gradient(circle, #fce4ec 40%, #e5e5f7 70%) !important;
-    background-size: 13px 13px, 26px 26px !important;
+        radial-gradient(circle, #e5e5f7 20%, transparent 25%) !important;
+
+    background-size: 15px 15px, 30px 30px !important;
     background-position: 0 0, 0 0 !important;
     opacity: 1 !important;
 }
@@ -1448,6 +1450,7 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
+
 
 
 
