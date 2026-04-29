@@ -88,7 +88,7 @@
 </div>
 </div>
 
-<section id="about-us-section" style="padding: 60px 20px; background: linear-gradient(135deg,#f5f1ec, #f5f1ec); text-align: right; font-family: 'Tajawal', sans-serif; margin-top:2%; overflow: hidden;margin-bottom:2%">
+<section id="about-us-section" style="padding: 60px 20px; background: linear-gradient(135deg,#f5f1ec, #f5f1ec); text-align: right; font-family: 'Tajawal', sans-serif;  overflow: hidden;margin-bottom:0%">
     
     <style>
         @keyframes floatLogo {
@@ -107,9 +107,9 @@
         }
     </style>
 
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 50px; margin-top:7%;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 50px; margin-top:7%; border-bottom:1px solid #d2b48c; ">
         
-        <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; position: relative;">
+        <div style="flex: 1; min-width: 50px; display: flex; justify-content: center; align-items: center; position: relative;">
             
             <div style="position: absolute; width: 300px; height: 300px; border: 2px solid #d2b48c; border-radius: 50%; animation: pulseCircle 4s infinite ease-in-out; z-index: 0;"></div>
             <div style="position: absolute; width: 340px; height: 340px; border: 1px dashed #d2b48c; border-radius: 50%; opacity: 0.2; z-index: 0;"></div>
@@ -143,36 +143,14 @@
     </div>
 </section>
 
-<div class="container" style="margin-bottom: 60px;">
-    <div class="card">
-        <div class="logo-box"><img src="img/pp.png" alt="الإبداع"></div>
-        <h3>نرحب بأفكاركم الجديدة</h3>
-        <p>لا حدود للإبداع معنا لديك فكرة ؟ أرسلها، وسنفرح بتحدي تنفيذها .</p>
-    </div>
-
-    <div class="card">
-        <div class="logo-box"><img src="img/jj.png" alt="الأسعار"></div>
-        <h3>أسعار مناسبة للجميع</h3>
-        <p>نؤمن بأن التميز لا يجب أن يكون باهظ الثمن. نقدم أفضل الأسعار التنافسية  .</p>
-    </div>
-
-    <div class="card">
-        <div class="logo-box"><img src="img/asd.png" alt="الشحن"></div>
-        <h3>شحن لجميع مناطق المملكة</h3>
-        <p>لا تقلق بشأن بعد المسافة، طلباتك تصلك أينما كنت في أي مدينة أو منطقة بالمملكة.</p>
-    </div>
-</div>
-
-
-
-<section id="categories-container">
-    <div class="hero-content" style="text-align: center; padding: 10px 20px;">
+<section id="categories">
+    <div class="hero-content" style="text-align: center;">
         <h1>نستقبل طلباتكم بكل امتنان</h1>
         <p>قوالب قابلة للتخصيص تناسب جميع المناسبات، اختار القالب واكتب فكرتك</p>
         <button class="main-btn" onclick="toggleCategories()">اختر التصنيف المناسب</button>
         
         <div id="categories-area" style="display:none; padding:40px 0; background-color:#f5f1ec;">
-        <div class="categories-container">
+        <div class="categories">
          <div class="categories-grid">
                     <a class="category-card" href="category.php?cat=page-baby">
                         <img src="img/baby.png" class="category-icone" alt="مواليد">
@@ -247,7 +225,33 @@
                 </div> </div> </div> </div>
 </section>
 
+<section>
 
+<div class="container" >
+    <div class="card">
+        <div class="logo-box"><img src="img/pp.png" alt="الإبداع"></div>
+        <h3>نرحب بأفكاركم الجديدة</h3>
+        <p>لا حدود للإبداع معنا لديك فكرة ؟ أرسلها، وسنفرح بتحدي تنفيذها .</p>
+    </div>
+
+    <div class="card">
+        <div class="logo-box"><img src="img/jj.png" alt="الأسعار"></div>
+        <h3>أسعار مناسبة للجميع</h3>
+        <p>نؤمن بأن التميز لا يجب أن يكون باهظ الثمن. نقدم أفضل الأسعار التنافسية  .</p>
+    </div>
+
+    <div class="card">
+        <div class="logo-box"><img src="img/asd.png" alt="الشحن"></div>
+        <h3>شحن لجميع مناطق المملكة</h3>
+        <p>لا تقلق بشأن بعد المسافة، طلباتك تصلك أينما كنت في أي مدينة أو منطقة بالمملكة.</p>
+    </div>
+</div>
+
+</section>
+
+
+
+<section>
 
   <div class="auth-overlay" id="authOverlay">
   <div class="auth-box">
@@ -300,6 +304,124 @@
 
 
 
+
+<section class="comments-section" style="padding: 220px 20px; background: linear-gradient(135deg,#f6f2ee, #f6f2ee); text-align: center; direction: rtl; font-family: 'Tajawal', sans-serif;">
+    <h2 style="color: #6b4e3d; font-size: 28px; margin-bottom: 25px;">آراء عملائنا المبدعين </h2>
+
+    <div class="comment-input-box" style="max-width: 420px; margin: 0 auto 40px;margin-top: 10px; background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #d2b48c; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+        
+        <p style="color: #8b7765; margin-bottom: 8px; font-size: 14px;">ما هو تقييمك لنا؟</p>
+        <div class="star-rating" style="direction: ltr; margin-bottom: 15px; font-size: 24px;">
+            <span class="star-btn" onclick="setRating(5)" style="cursor:pointer; color:#ffcc00; transition: 0.3s;">★</span>
+            <span class="star-btn" onclick="setRating(4)" style="cursor:pointer; color:#ffcc00; transition: 0.3s;">★</span>
+            <span class="star-btn" onclick="setRating(3)" style="cursor:pointer; color:#ffcc00; transition: 0.3s;">★</span>
+            <span class="star-btn" onclick="setRating(2)" style="cursor:pointer; color:#ffcc00; transition: 0.3s;">★</span>
+            <span class="star-btn" onclick="setRating(1)" style="cursor:pointer; color:#ffcc00; transition: 0.3s;">★</span>
+        </div>
+        <input type="hidden" id="rating_value" value="5">
+
+        <input type="text" id="c_name" placeholder="الاسم (اختياري)" style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 10px; border: 1px solid #e0d4c8; background: #fafafa; font-size: 14px; outline: none;">
+        <textarea id="c_text" placeholder="اكتب تجربتك هنا..." style="width: 100%; height: 70px; padding: 10px; border-radius: 10px; border: 1px solid #e0d4c8; background: #fafafa; font-size: 14px; outline: none; resize: none;"></textarea>
+        
+        <button onclick="saveComment()" class="main-btn" style="width: 100%;    background-color: #dec0a2; margin-top: 10px; padding: 10px; font-size: 15px; cursor: pointer;">إرسال التقييم</button>
+    </div>
+
+    <div class="slider-container" style="position: relative; max-width: 600px; margin: 0 auto; overflow: hidden;">
+        <div id="comments-track" style="display: flex; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); gap: 15px;">
+          
+        </div>
+        
+        <button onclick="prevSlide()" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: #6b4e3d; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; z-index: 10; opacity: 0.7;">&#10094;</button>
+        <button onclick="nextSlide()" style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%); background: #6b4e3d; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; z-index: 10; opacity: 0.7;">&#10095;</button>
+    </div>
+</section>
+
+<div id="successModal" style="display:none; position:fixed; inset:0; background:rgba(107, 78, 61, 0.3); backdrop-filter:blur(8px); z-index:10000; align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:30px; border-radius:25px; text-align:center; max-width:350px; width:85%; box-shadow:0 15px 40px rgba(0,0,0,0.15); animation: popScale 0.4s ease;">
+        <img src="img/logo bs.png" alt="BS Logo" style="width: 80px; margin-bottom: 15px;">
+        <h3 style="color:#6b4e3d; font-size:20px; margin-bottom:10px;">شكراً لثقتكِ!</h3>
+        <p style="color:#8b7765; font-size: 14px; line-height:1.5;">تم استلام تقييمك بنجاح. كلماتكِ هي سر إلهامنا في ثيمات BS.</p>
+        <button onclick="closeModal()" style="margin-top:20px; background:#826a3e; color:#fff; border:none; padding:10px 35px; border-radius:12px; cursor:pointer; font-weight:bold;">إغلاق</button>
+    </div>
+      <?php
+            include 'db_connect.php';
+            $res = mysqli_query($conn, "SELECT * FROM comments ORDER BY id DESC LIMIT 15");
+            if(mysqli_num_rows($res) > 0) {
+                while($row = mysqli_fetch_assoc($res)) {
+                    $r = isset($row['rating']) ? (int)$row['rating'] : 5;
+
+
+                    $stars = "";
+                    for($i=0; $i <$r; $i++) { $stars .= "<span style='color:#ffcc00;'>★</span>"; }
+                    for($i=$r; $i<5; $i++) { $stars .= "<span style='color:#ccc;'>★</span>"; }
+
+                    echo "<div class='comment-card' style='min-width: 100%; background: #fff; padding: 25px;
+                     border-radius: 20px; border-right: 5px solid #d2b48c; box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+                     box-sizing: border-box;'>";
+                    echo "<div style='font-size: 20px; margin-bottom: 10px; letter-spacing: 2px;'>$stars</div>";
+                    echo "<p style='font-size: 16px; color: #555; font-style: italic; line-height: 1.6;'>\"{$row['comment']}\"</p>";
+                    echo "<h4 style='color: #6b4e3d; margin-top: 15px; font-size: 15px;'>- {$row['name']}</h4>";
+                    echo "</div>";
+                }
+            }
+            
+            ?>
+</div>
+
+<style>
+@keyframes popScale { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+</style>
+
+<script>
+// تلوين النجوم التفاعلية
+function setRating(n) {
+    document.getElementById('rating_value').value = n;
+    const stars = document.querySelectorAll('.star-btn');
+    stars.forEach((s, i) => {
+        s.style.color = (4 - i < n) ? "#ffcc00" : "#ccc";
+    });
+}
+
+// السلايدر
+let currentIdx = 0;
+function moveCarousel() {
+    const track = document.getElementById('comments-track');
+    const cards = document.querySelectorAll('.comment-card');
+    if (currentIdx >= cards.length) currentIdx = 0;
+    if (currentIdx < 0) currentIdx = cards.length - 1;
+    track.style.transform = `translateX(${currentIdx * 100}%)`;
+}
+function nextSlide() { currentIdx++; moveCarousel(); }
+function prevSlide() { currentIdx--; moveCarousel(); }
+setInterval(nextSlide, 5000);
+
+// حفظ التعليق
+function saveComment() {
+    const name = document.getElementById('c_name').value;
+    const text = document.getElementById('c_text').value;
+    const rating = document.getElementById('rating_value').value;
+    if(!text.trim()) { alert("لطفاً، اكتبي رأيك الجميل ✨"); return; }
+
+    const fd = new FormData();
+    fd.append('name', name); fd.append('comment', text); fd.append('rating', rating);
+
+    fetch('save_comment.php', { method: 'POST', body: fd })
+    .then(() => {
+        document.getElementById('successModal').style.display = 'flex';
+        document.getElementById('c_name').value = '';
+        document.getElementById('c_text').value = '';
+    });
+}
+
+function closeModal() {
+    document.getElementById('successModal').style.display = 'none';
+    location.reload();
+}
+</script>
+
+
+
+<!-- Footer -->
 <footer id="contact-us">
 <div class="main-footer">
     <div class="footer-container">
@@ -348,12 +470,27 @@
 </div>
 
 <script>
-
 function toggleCategories() {
     const area = document.getElementById('categories-area');
     area.style.display = (area.style.display === 'none') ? 'block' : 'none';
 }
+
 </script>
+<div id="searchOverlay" class="auth-overlay" style="display: none; align-items: flex-start; padding-top: 100px;">
+    <div class="auth-box" style="max-width: 600px; width: 90%; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.2);">
+        <button class="close-login-btn" onclick="closeSearch()">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="#826a3e" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="heading" style="margin-bottom: 25px; font-size: 22px;">عن ماذا تبحثين اليوم؟ ✨</div>
+        
+        <form action="category.php" method="GET" style="display: flex; gap: 10px; background: #f9f6f2; padding: 10px; border-radius: 15px; border: 1px solid #d2b48c;">
+            <input type="text" name="search" id="searchInput" placeholder="اكتبي مثلاً: فوانيس، تخرج، مواليد..." required 
+                   style="flex: 1; border: none; background: transparent; padding: 10px; outline: none; font-family: 'Tajawal'; font-size: 16px;">
+            <button type="submit" style="background: #826a3e; color: white; border: none; padding: 10px 25px; border-radius: 10px; cursor: pointer; font-family: 'Tajawal';">بحث</button>
+        </form>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
