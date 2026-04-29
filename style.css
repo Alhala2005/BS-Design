@@ -67,14 +67,14 @@ body {
 .hero-content {
     text-align: center;
     color: #492F00;
-    background: #f5f1ec;
-    padding: 40px 20px;
+background: linear-gradient(135deg,#f6f2ee, #f6f2ee);   
+ padding: 40px 20px;
     border-radius: 0;
 }
 
 .hero-content h1 {
     margin-bottom: 15px;
-    margin-top: 195px;
+    margin-top:75px;
 }
 
 .hero-content p {
@@ -87,8 +87,7 @@ body {
     color: #826a3e;
     margin-top: 2%;
     margin-bottom: 2%;
-    background: linear-gradient(135deg,#f5f1ec , #ffffff);  
-}
+background: linear-gradient(135deg,#f5f1ec, #f9f7f5);}
 
 .hero h1 {
     color: #492F00;
@@ -109,7 +108,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     margin-top: 2%;
-    margin-bottom: 75px;
+    margin-bottom: 175px;
 }
 
 .main-btn:hover {
@@ -404,22 +403,22 @@ box-shadow: 0 10px 30px rgba(171, 13, 13, 0.1);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 1000px;
     justify-content: center;
     margin: 0 auto;
+    width: 100%;
+  height: 100%;
+
 }
 
 .card {
-    background: rgba(249, 247, 247, 0.8); 
+    background: #fff; 
     border-radius: 15px;
     padding: 25px;
     width: 300px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(252, 251, 251, 0.1);
-        border: 2px solid rgba(150, 37, 37, 0.3);
-
+    border: 2px solid rgba(150, 37, 37, 0.3);
     transition: transform 0.3s ease;
-    margin-top: 6%;
     backdrop-filter: blur(10px); 
 }
 
@@ -488,7 +487,7 @@ box-shadow: 0 10px 30px rgba(171, 13, 13, 0.1);
     12.5px 12.5px; 
 }
 
-.categories-container {
+.categories {
   max-width: 600px;
   margin: auto;
   text-align: center;
@@ -1104,16 +1103,17 @@ a.category-card {
         padding: 15px;
     }
     
-  .containere {
+    .containere {
     margin: 30px 0 0 0;
     padding: 25px 0;
     border-radius: 0;
     overflow: hidden;
     background-image: url('img/kala.png') !important;
 background-size: 460px !important;
-      background-repeat: repeat !important;
+    background-repeat: repeat !important;
     opacity: 1 !important;
 }
+    
     .carousel-wrapper {
         margin: 0;
         padding: 0;
@@ -1443,6 +1443,3 @@ margin-top: 22%;
         border-radius: 20px;
     }
 }
-
-
-
